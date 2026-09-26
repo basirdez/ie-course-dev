@@ -1,0 +1,28 @@
+# مخزن خصوصی: هر push به main همهٔ جلسه‌ها را با PDF می‌سازد، متن‌ها را بررسی می‌کند
+# و سایت پیش‌نمایش را به‌صورت artifact به نام site-preview نگه می‌دارد (Actions › آخرین اجرا › Artifacts).
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run images
+      - name: بررسی متن و بودجه
+        run: for f in sessions/*/*.md 00-chapter-map.md course-policy.md exercises/*/README.md; do node scripts/check.mjs "$f"; done
+      - run: node scripts/site.mjs --pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: dist
+          retention-days: 14

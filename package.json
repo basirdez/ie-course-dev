@@ -1,0 +1,23 @@
+{
+  "name": "internet-engineering-slides",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open false",
+    "site": "node scripts/site.mjs",
+    "check": "node scripts/check.mjs",
+    "images": "node scripts/images.mjs",
+    "pdf": "slidev export --executable-path"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@slidev/cli": "53.0.0",
+    "@slidev/theme-default": "0.25.0",
+    "qrcode": "1.5.4",
+    "vazirmatn": "33.0.3"
+  },
+  "devDependencies": {
+    "playwright-chromium": "1.63.0",
+    "markdown-it": "14.3.2"
+  }
+}

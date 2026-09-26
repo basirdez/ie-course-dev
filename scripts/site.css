@@ -1,0 +1,67 @@
+/* سایت درس: فهرست جلسه‌ها، صفحهٔ تمرین و قواعد درس. هم‌رنگ تم اسلایدها. */
+@font-face { font-family: Vazirmatn; src: url(vazirmatn.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+:root {
+  --bg: #F4F6F8; --card: #FFFFFF; --ink: #16202C; --muted: #5A6776; --rule: #D5DCE3;
+  --accent: #0A6C86; --accent-soft: #E6F0F3; --ex: #137333; --ex-soft: #E6F4EA; --code: #EDF1F5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1720; --card: #16212C; --ink: #E6ECF2; --muted: #9AA8B6; --rule: #2A3947;
+    --accent: #4FB6D0; --accent-soft: #16303A; --ex: #5CBF85; --ex-soft: #173024; --code: #1B2733;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.9 Vazirmatn, Tahoma, sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+.top { background: var(--card); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; flex-wrap: wrap; }
+.brand { font-weight: 800; color: var(--ink); text-decoration: none; }
+.brand::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--accent); margin-left: 8px; }
+.top nav { display: flex; gap: 18px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--accent); }
+
+.hero { padding: 40px 0 8px; }
+.hero h1 { font-size: 34px; line-height: 1.4; margin: 0 0 4px; }
+.hero p { margin: 0; color: var(--muted); }
+.hero .hint { margin-top: 14px; font-size: 15px; }
+
+section h2 { font-size: 18px; color: var(--muted); font-weight: 700; margin: 32px 0 10px; }
+.sessions { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sessions li { display: grid; grid-template-columns: 44px 1fr auto; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+.sessions li.off { opacity: .62; }
+.sessions .n { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 800; font-size: 18px; }
+.sessions .t b { display: block; font-size: 18px; line-height: 1.6; }
+.sessions .t small { display: block; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.sessions .a { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn { display: inline-block; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 999px; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.btn:hover { background: var(--accent-soft); }
+.btn.ex { border-color: var(--ex); color: var(--ex); }
+.btn.ex:hover { background: var(--ex-soft); }
+.soon { font-size: 13px; color: var(--muted); }
+
+.doc { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 8px 28px 24px; margin: 28px 0; }
+.doc h1 { font-size: 28px; line-height: 1.5; }
+.doc h2 { font-size: 20px; margin-top: 30px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.doc blockquote { margin: 0; padding: 4px 16px; border-right: 4px solid var(--ex); background: var(--ex-soft); border-radius: 6px; color: var(--ink); }
+.doc code { font-family: "JetBrains Mono", Consolas, monospace; font-size: .86em; background: var(--code); padding: 1px 6px; border-radius: 4px; direction: ltr; unicode-bidi: isolate; }
+.doc pre { background: var(--code); padding: 12px 16px; border-radius: 8px; overflow-x: auto; text-align: left; line-height: 1.6; }
+.doc pre code { background: none; padding: 0; font-size: 14px; }
+.tbl { overflow-x: auto; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.doc th, .doc td { border-bottom: 1px solid var(--rule); padding: 8px 10px; text-align: right; vertical-align: top; }
+.doc th { color: var(--muted); font-weight: 700; }
+.files { border-top: 1px solid var(--rule); padding-top: 14px; }
+
+footer { color: var(--muted); font-size: 13px; padding: 32px 16px 40px; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero h1 { font-size: 28px; }
+  .sessions li { grid-template-columns: 40px 1fr; }
+  .sessions .a { grid-column: 1 / -1; justify-content: flex-start; }
+  .doc { padding: 4px 16px 18px; }
+}

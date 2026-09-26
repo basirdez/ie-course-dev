@@ -1,0 +1,43 @@
+# انتشار: فقط با اجرای دستی (Actions › Publish › Run workflow).
+# فقط جلسه‌ها و تمرین‌هایی که در course.json با published: true آمده‌اند به مخزن عمومی می‌روند:
+#   سایت → شاخهٔ gh-pages مخزن عمومی (GitHub Pages)
+#   فایل‌های دانشجو (صورت تمرین، starter، check، قواعد درس) → شاخهٔ main مخزن عمومی
+# پیش‌نیاز یک‌باره: کلید PUBLIC_DEPLOY_KEY (راهنما در README).
+name: Publish
+on:
+  workflow_dispatch:
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run images
+      - run: node scripts/publish.mjs
+      - id: target
+        run: echo "repo=$(node -p "require('./course.json').publicRepo")" >> "$GITHUB_OUTPUT"
+      - name: سایت → gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
+          external_repository: ${{ steps.target.outputs.repo }}
+          publish_branch: gh-pages
+          publish_dir: out/site
+          force_orphan: true
+      - name: فایل‌های دانشجو → main
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
+          external_repository: ${{ steps.target.outputs.repo }}
+          publish_branch: main
+          publish_dir: out/repo
+          enable_jekyll: true
+          commit_message: "انتشار از مخزن خصوصی"
