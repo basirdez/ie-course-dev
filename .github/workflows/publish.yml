@@ -3,15 +3,24 @@
 #   سایت → شاخهٔ gh-pages مخزن عمومی (GitHub Pages)
 #   فایل‌های دانشجو (صورت تمرین، starter، check، قواعد درس) → شاخهٔ main مخزن عمومی
 # پیش‌نیاز یک‌باره: کلید PUBLIC_DEPLOY_KEY (راهنما در README).
-# آزمایشی (dry_run): فقط out/ ساخته و به‌صورت artifact به نام publish-preview نگه داشته می‌شود؛ چیزی push نمی‌شود.
+# حالت‌ها (mode):
+#   dry-run   فقط out/ ساخته و به‌صورت artifact به نام publish-preview نگه داشته می‌شود.
+#   test-here سایت عمومی (out/site) روی GitHub Pages همین مخزن می‌رود، نه مخزن عمومی.
+#             پیش‌نیاز: Settings › Pages › Source: GitHub Actions. آدرس: https://<کاربر>.github.io/<این مخزن>/
+#   publish   انتشار واقعی در مخزن عمومی.
 name: Publish
 on:
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: 'آزمایشی: فقط بساز، منتشر نکن'
-        type: boolean
-        default: true
+      mode:
+        description: 'dry-run: فقط بساز | test-here: Pages همین مخزن | publish: مخزن عمومی'
+        type: choice
+        options: [dry-run, test-here, publish]
+        default: dry-run
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 concurrency:
   group: publish
   cancel-in-progress: false
@@ -35,8 +44,12 @@ jobs:
           name: publish-preview
           path: out
           retention-days: 7
+      - if: ${{ inputs.mode == 'test-here' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/site
       - name: بررسی پیش‌نیازهای انتشار
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode == 'publish' }}
         env:
           KEY: ${{ secrets.PUBLIC_DEPLOY_KEY }}
           REPO: ${{ steps.target.outputs.repo }}
@@ -44,7 +57,7 @@ jobs:
           [ -n "$KEY" ] || { echo "::error::سکرت PUBLIC_DEPLOY_KEY تعریف نشده (راهنما در README)."; exit 1; }
           case "$REPO" in OWNER/*|"") echo "::error::publicRepo در course.json هنوز مقدار نمونه است: $REPO"; exit 1;; esac
       - name: سایت → gh-pages
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode == 'publish' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
@@ -53,7 +66,7 @@ jobs:
           publish_dir: out/site
           force_orphan: true
       - name: فایل‌های دانشجو → main
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.mode == 'publish' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
@@ -62,3 +75,13 @@ jobs:
           publish_dir: out/repo
           enable_jekyll: true
           commit_message: "انتشار از مخزن خصوصی"
+  test-here:
+    needs: publish
+    if: ${{ inputs.mode == 'test-here' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
