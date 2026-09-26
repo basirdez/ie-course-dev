@@ -1,19 +1,21 @@
-# انتشار: فقط با اجرای دستی (Actions › Publish › Run workflow).
-# فقط جلسه‌ها و تمرین‌هایی که در course.json با published: true آمده‌اند به مخزن عمومی می‌روند:
-#   سایت → شاخهٔ gh-pages مخزن عمومی (GitHub Pages)
-#   فایل‌های دانشجو (صورت تمرین، starter، check، قواعد درس) → شاخهٔ main مخزن عمومی
-# پیش‌نیاز یک‌باره: کلید PUBLIC_DEPLOY_KEY (راهنما در README).
-# حالت‌ها (mode):
-#   dry-run   فقط out/ ساخته و به‌صورت artifact به نام publish-preview نگه داشته می‌شود.
-#   test-here سایت عمومی (out/site) روی GitHub Pages همین مخزن می‌رود، نه مخزن عمومی.
-#             پیش‌نیاز: Settings › Pages › Source: GitHub Actions. آدرس: https://<کاربر>.github.io/<این مخزن>/
-#   publish   انتشار واقعی در مخزن عمومی.
+# Publish: manual only (Actions › Publish › Run workflow).
+# Only sessions and exercises marked "published": true in course.json are included.
+#
+# Modes:
+#   dry-run    Build out/ and keep it as the "publish-preview" artifact. Nothing is pushed.
+#   test-here  Deploy the public site (out/site) to GitHub Pages of THIS repo.
+#              One-time setup: Settings › Pages › Source: GitHub Actions.
+#              URL: https://<user>.github.io/<this-repo>/
+#   publish    Real release to the public repo:
+#                site          → gh-pages branch (GitHub Pages)
+#                student files → main branch (exercise statements, starter, check, course policy)
+#              One-time setup: PUBLIC_DEPLOY_KEY secret and publicRepo in course.json (see README).
 name: Publish
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'dry-run: فقط بساز | test-here: Pages همین مخزن | publish: مخزن عمومی'
+        description: 'dry-run: build only | test-here: Pages of this repo | publish: public repo'
         type: choice
         options: [dry-run, test-here, publish]
         default: dry-run
@@ -48,15 +50,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: out/site
-      - name: بررسی پیش‌نیازهای انتشار
+      - name: Check publish prerequisites
         if: ${{ inputs.mode == 'publish' }}
         env:
           KEY: ${{ secrets.PUBLIC_DEPLOY_KEY }}
           REPO: ${{ steps.target.outputs.repo }}
         run: |
-          [ -n "$KEY" ] || { echo "::error::سکرت PUBLIC_DEPLOY_KEY تعریف نشده (راهنما در README)."; exit 1; }
-          case "$REPO" in OWNER/*|"") echo "::error::publicRepo در course.json هنوز مقدار نمونه است: $REPO"; exit 1;; esac
-      - name: سایت → gh-pages
+          [ -n "$KEY" ] || { echo "::error::Secret PUBLIC_DEPLOY_KEY is not set (see README)."; exit 1; }
+          case "$REPO" in OWNER/*|"") echo "::error::publicRepo in course.json is still a placeholder: $REPO"; exit 1;; esac
+      - name: Site → gh-pages
         if: ${{ inputs.mode == 'publish' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -65,7 +67,7 @@ jobs:
           publish_branch: gh-pages
           publish_dir: out/site
           force_orphan: true
-      - name: فایل‌های دانشجو → main
+      - name: Student files → main
         if: ${{ inputs.mode == 'publish' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -74,7 +76,7 @@ jobs:
           publish_branch: main
           publish_dir: out/repo
           enable_jekyll: true
-          commit_message: "انتشار از مخزن خصوصی"
+          commit_message: "Publish from private repo"
   test-here:
     needs: publish
     if: ${{ inputs.mode == 'test-here' }}
