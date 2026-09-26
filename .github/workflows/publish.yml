@@ -3,9 +3,15 @@
 #   سایت → شاخهٔ gh-pages مخزن عمومی (GitHub Pages)
 #   فایل‌های دانشجو (صورت تمرین، starter، check، قواعد درس) → شاخهٔ main مخزن عمومی
 # پیش‌نیاز یک‌باره: کلید PUBLIC_DEPLOY_KEY (راهنما در README).
+# آزمایشی (dry_run): فقط out/ ساخته و به‌صورت artifact به نام publish-preview نگه داشته می‌شود؛ چیزی push نمی‌شود.
 name: Publish
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'آزمایشی: فقط بساز، منتشر نکن'
+        type: boolean
+        default: true
 concurrency:
   group: publish
   cancel-in-progress: false
@@ -24,7 +30,21 @@ jobs:
       - run: node scripts/publish.mjs
       - id: target
         run: echo "repo=$(node -p "require('./course.json').publicRepo")" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: publish-preview
+          path: out
+          retention-days: 7
+      - name: بررسی پیش‌نیازهای انتشار
+        if: ${{ !inputs.dry_run }}
+        env:
+          KEY: ${{ secrets.PUBLIC_DEPLOY_KEY }}
+          REPO: ${{ steps.target.outputs.repo }}
+        run: |
+          [ -n "$KEY" ] || { echo "::error::سکرت PUBLIC_DEPLOY_KEY تعریف نشده (راهنما در README)."; exit 1; }
+          case "$REPO" in OWNER/*|"") echo "::error::publicRepo در course.json هنوز مقدار نمونه است: $REPO"; exit 1;; esac
       - name: سایت → gh-pages
+        if: ${{ !inputs.dry_run }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
@@ -33,6 +53,7 @@ jobs:
           publish_dir: out/site
           force_orphan: true
       - name: فایل‌های دانشجو → main
+        if: ${{ !inputs.dry_run }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.PUBLIC_DEPLOY_KEY }}
