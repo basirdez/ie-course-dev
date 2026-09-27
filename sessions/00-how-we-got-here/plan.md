@@ -26,3 +26,5 @@
 - داستان LO و «یک ساعت بعد» با [Smithsonian](https://www.americanhistory.si.edu/explore/stories/internet-uttered-lo-forty-years-ago) راستی‌آزمایی شد
 - فاصلهٔ IE6 (اوت ۲۰۰۱) تا [IE7](https://en.wikipedia.org/wiki/Internet_Explorer_7) (اکتبر ۲۰۰۶) راستی‌آزمایی شد
 - تصویرسازی دوره‌ها در `components/EraArt.vue` است و در خط زمان و چهار اسلاید بی‌عکس به کار می‌رود
+- سؤال آغاز جلسه از «خاموشی فرضی DNS» به قطعی واقعی AWS در ۲۸ مهر ۱۴۰۴ تغییر کرد، چون DNS هنوز تدریس نشده بود؛ DNS حالا در پاسخ با تعریف یک‌خطی و ارجاع به جلسهٔ ۱ می‌آید. واقعیت‌ها با [گزارش رسمی AWS](https://aws.amazon.com/message/101925/) و [Pragmatic Engineer](https://blog.pragmaticengineer.com/aws-outage-us-east-1/) راستی‌آزمایی شد: رکورد خالی برای `dynamodb.us-east-1.amazonaws.com`، آغاز ۰۶:۴۸ UTC (۱۰:۱۸ تهران)، بازگشت کامل حدود ۲۲:۰۰ UTC
+- `[بررسی‌نشده: پیش‌نیاز]` سؤال «چرا HTTP/3 روی UDP؟» به شناخت UDP و NAT و فایروال تکیه دارد؛ اگر فرض «دانشجو درس شبکه را گذرانده» (نقشهٔ فصل) این‌ها را هم پوشش نمی‌دهد، پیش از سؤال یک خط توضیح لازم است

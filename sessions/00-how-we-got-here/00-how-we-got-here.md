@@ -30,15 +30,15 @@ link: none
 corner: پیش‌درآمد
 ---
 
-# اگر فردا DNS همهٔ دنیا خاموش شود، چه چیزهایی از کار می‌افتد؟
+# چه چیزی Signal و Zoom و Duolingo را هم‌زمان از کار انداخت؟
 
-یک دقیقه فکر کنید و فهرست بدهید؛ بعد با هم ببینیم.
+۲۸ مهر ۱۴۰۴، حدود ده صبح به وقت تهران: هزاران سایت و برنامهٔ بی‌ربط در سراسر دنیا با هم از کار افتادند و بعضی تا نیمه‌شب برنگشتند. یک دقیقه حدس بزنید علت چه بود.
 
-<div v-click="1" class="answer"><strong>آنچه واقعاً می‌افتد:</strong> تقریباً همه‌چیز؛ وب‌سایت‌ها، پیام‌رسان‌ها، بانک‌ها، به‌روزرسانی گوشی، و حتی بخشی از زیرساخت خود ابرها. در مهر ۱۴۰۴ فقط خالی شدن یک رکورد DNS در AWS هزاران سرویس را از کار انداخت.</div>
+<div v-click="1" class="answer"><strong>آنچه واقعاً رخ داد:</strong> هیچ‌کدام خودشان خراب نشده بودند. همه، مستقیم یا غیرمستقیم، <span class="mark">به سرویس‌های مشترکی در Amazon</span> تکیه داشتند و یک خطای خودکار، نام یکی از آن سرویس‌ها را از DNS پاک کرد؛ DNS دفترچهٔ نام‌های اینترنت است که نام را به نشانی عددی ترجمه می‌کند (جلسهٔ ۱). سرورها روشن بودند، ولی کسی نشانی‌شان را پیدا نمی‌کرد (<a href="https://aws.amazon.com/message/101925/">گزارش رسمی AWS</a>).</div>
 
 ::punch::
 
-<div v-click="1">اینترنت مجموعه‌ای از قراردادهاست که هرکدام روزی یک تصمیم مهندسی بوده؛ این جلسه داستان همین تصمیم‌هاست.</div>
+<div v-click="1">اینترنت زنجیره‌ای از قراردادهای نامرئی است و هرکدام روزی یک تصمیم مهندسی بوده؛ این جلسه داستان همین تصمیم‌هاست.</div>
 
 ---
 module: M0
@@ -134,7 +134,7 @@ corner: TCP/IP
 <div>
 
 - در [یکم ژانویهٔ ۱۹۸۳](https://en.wikipedia.org/wiki/Flag_day_(computing)) همهٔ ARPANET باید هم‌زمان به [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite) کوچ می‌کرد؛ هر میزبانی که آماده نبود، قطع می‌شد
-- در همان سال [DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS) طراحی شد تا جای فایل مشترک HOSTS.TXT را بگیرد (جلسهٔ ۱)
+- در همان سال [DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS) طراحی شد تا جای HOSTS.TXT را بگیرد، فهرست مشترکی از نام‌ها و نشانی‌ها که همه دستی کپی‌اش می‌کردند؛ همان DNS که در قطعی AWS یک نامش پاک شد (جلسهٔ ۱)
 - آن روز شبکه آن‌قدر کوچک بود که می‌شد همه را یک‌جا عوض کرد؛ امروز IPv6 با وجود بیش از ۲۵ سال عمر، هنوز [همه‌جا جای IPv4 را نگرفته]{.mark}
 
 </div>
@@ -819,6 +819,7 @@ corner: منابع
 # منابع
 
 <ul class="src two">
+  <li><a href="https://aws.amazon.com/message/101925/">گزارش AWS از قطعی ۲۸ مهر ۱۴۰۴ <bdi>(20 Oct 2025)</bdi></a></li>
   <li><a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a> · <a href="https://en.wikipedia.org/wiki/Paul_Baran">Paul Baran</a> · <a href="https://www.americanhistory.si.edu/explore/stories/internet-uttered-lo-forty-years-ago">Smithsonian: LO</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Flag_day_(computing)">Flag day (computing)</a></li>
   <li><a href="https://info.cern.ch">info.cern.ch: نخستین وب‌سایت</a></li>
