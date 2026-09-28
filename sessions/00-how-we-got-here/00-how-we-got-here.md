@@ -412,6 +412,29 @@ corner: وب باز
 استانداردی که با رفتار واقعی نخواند، فقط روی کاغذ استاندارد است.
 
 ---
+type: interactive
+module: M4
+minutes: 3
+link: none
+---
+
+# چرا Chrome خودش را Mozilla هم معرفی می‌کند؟
+
+هدر `User-Agent` که Chrome 143 روی Windows در هر درخواست HTTP می‌فرستد (جلسهٔ ۲)، در اصل یک خط:
+
+```text
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+    (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+```
+
+
+<div v-click="1" class="answer"><strong>پاسخ:</strong> سایت‌های دههٔ ۹۰ صفحهٔ کامل را فقط به Netscape می‌دادند، که خودش را Mozilla می‌نامید؛ IE خودش را سازگار با Mozilla معرفی کرد و هر مرورگر بعدی ادای قبلی را درآورد (<a href="https://webaim.org/blog/user-agent-string-history/">تاریخچه</a>). امروز <code>navigator.appName</code> در <span class="mark">هر مرورگری <code>"Netscape"</code></span> است.</div>
+
+::punch::
+
+<div v-click="1">وقتی سایت به‌جای قابلیت، نام مرورگر را بسنجد، هر مرورگر تازه مجبور به دروغ می‌شود.</div>
+
+---
 module: M4
 minutes: 2
 link: none
@@ -679,6 +702,29 @@ link: none
 corner: هوش مصنوعی
 ---
 
+# وقتی بات هم خودش را Chrome معرفی می‌کند
+
+- مرداد ۱۴۰۴ Cloudflare [گزارش داد](https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/) خزندهٔ اعلام‌نشدهٔ Perplexity، وقتی مسدود می‌شد، با این User-Agent روزی میلیون‌ها درخواست می‌فرستاد؛ Perplexity ادعا را رد کرد:
+
+```text
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+    (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+```
+
+- خود Chrome از ۱۴۰۱ User-Agent را [یخ زد](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/User-agent_reduction) و جزئیات را به هدرهای `Sec-CH-UA-*` برد
+- راه تازه [هویت با امضا، نه با ادعا]{.mark} است: [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/) در IETF (جلسهٔ ۷)
+
+::punch::
+
+هدری که هرکس می‌تواند بنویسد، هویت نیست؛ همان درس دههٔ ۹۰، این بار برای بات‌ها.
+
+---
+module: M6
+minutes: 2
+link: none
+corner: هوش مصنوعی
+---
+
 # وقتی agent به‌جای شما مرور می‌کند
 
 - مرورگرهای هوش مصنوعی مثل Comet (تیر ۱۴۰۴) و ChatGPT Atlas (مهر ۱۴۰۴) خودشان صفحه باز می‌کنند، فرم پر می‌کنند و حتی خرید می‌کنند؛ از [بهمن ۱۴۰۴](https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/) خود Chrome هم با auto browse همین کار را می‌کند
@@ -734,7 +780,7 @@ corner: جمع‌بندی
 | --- | --- |
 | باز بودن معمولاً برنده می‌شود | وب در برابر Gopher، و TCP/IP |
 | انحصار و تمرکز شکننده است | IE6 و Chromium و قطعی AWS در مهر ۱۴۰۴ |
-| هرچه پرکاربردتر، عوض کردنش سخت‌تر | IPv6 و SmooshGate و QUIC روی UDP |
+| هرچه پرکاربردتر، عوض کردنش سخت‌تر | IPv6 و SmooshGate و User-Agent و QUIC روی UDP |
 | امنیت دیرهنگام گران است | DigiNotar؛ و این بار زودتر، رمزنگاری [پساکوانتومی](https://blog.cloudflare.com/post-quantum-roadmap/) |
 
 ::punch::
@@ -832,7 +878,7 @@ corner: جمع‌بندی
 
 <ol class="curious" style="counter-reset: q 3">
   <li>چرا یک خطای DNS در یک منطقهٔ AWS، سرویس‌هایی را در سراسر دنیا انداخت و چرا بازگشت کامل ساعت‌ها بیشتر از رفع خود خطا طول کشید؟<span class="hint">بخش‌های DynamoDB و EC2 در گزارش رسمی AWS، و نقش منطقهٔ us-east-1.</span></li>
-  <li>اگر یک agent به‌جای شما خرید کند، سایت از کجا بفهمد آن agent مجاز است؟<span class="hint">Web Bot Auth و امضای درخواست‌های HTTP.</span></li>
+  <li>مرورگر شما الان چه User-Agentی می‌فرستد، و Chrome کدام جزئیات را فقط وقتی می‌دهد که سرور بخواهد؟<span class="hint">زبانهٔ Network در DevTools؛ هدرهای <code>Accept-CH</code> و <code>Sec-CH-UA</code> در MDN.</span></li>
 </ol>
 
 ---
@@ -855,7 +901,7 @@ corner: منابع
   <li><a href="https://nsrc.org/regions/MIDEAST/IR/internet-iran-2001.pdf">NSRC: Iran's Telecom and Internet Sector</a></li>
   <li><a href="https://iranian.com/WebGuide/InternetIran/InternetIran.html">The Iranian: The Internet in Iran (۱۹۹۷)</a> · <a href="https://en.wikipedia.org/wiki/.ir">.ir</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Browser_wars">Browser wars</a> · <a href="https://en.wikipedia.org/wiki/Pierre_Omidyar">Pierre Omidyar</a></li>
-  <li><a href="https://developer.chrome.com/blog/smooshgate">SmooshGate</a> · <a href="https://whatwg.org/">WHATWG</a></li>
+  <li><a href="https://developer.chrome.com/blog/smooshgate">SmooshGate</a> · <a href="https://whatwg.org/">WHATWG</a> · <a href="https://webaim.org/blog/user-agent-string-history/">تاریخچهٔ User-Agent</a></li>
   <li><a href="https://irancell.ir/en/p/4852/irancell-background">Irancell: تاریخچه</a> · <a href="https://www.npr.org/2025/09/02/nx-s1-5478625/google-chrome-doj-antitrust-ruling">NPR: حکم Chrome</a></li>
   <li>تصویرها: ویکی‌مدیا؛ صاحب اثر و مجوز زیر هر تصویر</li>
 </ul>
@@ -880,6 +926,7 @@ corner: منابع
   <li><a href="https://www.imperva.com/blog/bad-bot-report-2026-bots-agentic-age/">Imperva: Bad Bot Report 2026</a></li>
   <li><a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare: ترافیک هوش مصنوعی (۱۴۰۵)</a></li>
   <li><a href="https://www.infoq.com/news/2026/07/cloudflare-aws-x402-micropayment/">InfoQ: x402 در Cloudflare و AWS</a></li>
+  <li><a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">Cloudflare: خزندهٔ Perplexity</a> · <a href="https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/">Web Bot Auth</a></li>
   <li><a href="https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/">TechCrunch: auto browse در Chrome</a></li>
   <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">MCP: مشخصات مرداد ۱۴۰۵</a></li>
 </ul>
