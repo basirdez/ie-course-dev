@@ -9,7 +9,7 @@ modules:
   M2: { slug: web, title: ۱۹۸۹ تا ۱۹۹۳ }
   M3: { slug: browser-war, title: ۱۹۹۴ تا ۲۰۰۱ }
   M4: { slug: open-web, title: ۲۰۰۴ تا ۲۰۱۲ }
-  M5: { slug: secure-web, title: ۲۰۱۳ تا ۲۰۲۲ }
+  M5: { slug: secure-web, title: ۲۰۱۱ تا ۲۰۲۲ }
   M6: { slug: ai, title: ۲۰۲۲ تا امروز }
   M7: { slug: next, title: از اینجا به بعد }
 ---
@@ -95,33 +95,6 @@ corner: ARPANET
 طراحی بدون مرکز یعنی هیچ‌کس نمی‌تواند کل اینترنت را خاموش کند؛ ولی هیچ‌کس هم کل آن را اداره نمی‌کند.
 
 ---
-type: interactive
-module: M1
-minutes: 3
-link: none
----
-
-# اولین پیام اینترنت چه بود؟
-
-۲۹ اکتبر ۱۹۶۹، از UCLA به SRI.
-
-<ol class="options">
-  <li><b>الف)</b> HELLO</li>
-  <li v-mark.box.orange="1"><b>ب)</b> LO</li>
-  <li><b>ج)</b> TEST</li>
-  <li><b>د)</b> LOGIN</li>
-</ol>
-
-<div v-click="1" class="cols">
-<div class="answer"><strong>پاسخ: ب)</strong> قرار بود LOGIN فرستاده شود؛ سیستم بعد از دو حرف از کار افتاد و «LO» اولین پیام شد. حدود یک ساعت بعد پیام کامل رسید (<a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a>).</div>
-<Shot src="images/imp-log-1969.jpg" wiki="First-arpanet-imp-log.jpg" alt="دفتر ثبت IMP در UCLA، شب ۲۹ اکتبر ۱۹۶۹" caption="دفتر ثبت UCLA، شب ۲۹ اکتبر ۱۹۶۹" h="170" />
-</div>
-
-::punch::
-
-<div v-click="1">اولین پیام اینترنت با یک خرابی ثبت شد؛ از همان روز، هر حلقه‌ای می‌توانست وسط کار بشکند.</div>
-
----
 module: M1
 minutes: 2
 link: none
@@ -133,9 +106,9 @@ corner: TCP/IP
 <div class="cols">
 <div>
 
-- در [یکم ژانویهٔ ۱۹۸۳](https://en.wikipedia.org/wiki/Flag_day_(computing)) همهٔ ARPANET باید هم‌زمان به [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite) کوچ می‌کرد؛ هر میزبانی که آماده نبود، قطع می‌شد
+- در [یکم ژانویهٔ ۱۹۸۳](https://en.wikipedia.org/wiki/Flag_day_(computing)) همهٔ ARPANET باید هم‌زمان به [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite) کوچ می‌کرد؛ [هر میزبانی که آماده نبود، قطع می‌شد]{.mark}
+- تاریخ کوچ را [RFC 801](https://www.rfc-editor.org/rfc/rfc801)، یکی از سندهای رسمی اینترنت، از نوامبر ۱۹۸۱ اعلام کرده بود؛ بیش از یک سال فرصت برای همه
 - در همان سال [DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS) طراحی شد تا جای HOSTS.TXT را بگیرد، فهرست مشترکی از نام‌ها و نشانی‌ها که همه دستی کپی‌اش می‌کردند؛ همان DNS که در قطعی AWS یک نامش پاک شد (جلسهٔ ۱)
-- آن روز شبکه آن‌قدر کوچک بود که می‌شد همه را یک‌جا عوض کرد؛ امروز IPv6 با وجود بیش از ۲۵ سال عمر، هنوز [همه‌جا جای IPv4 را نگرفته]{.mark}
 
 </div>
 <Shot src="images/arpanet-map-1977.png" wiki="Arpanet logical map, march 1977.png" alt="نقشهٔ منطقی ARPANET در مارس ۱۹۷۷" caption="کل ARPANET در مارس ۱۹۷۷ در یک صفحه جا می‌شد" h="330" />
@@ -143,7 +116,31 @@ corner: TCP/IP
 
 ::punch::
 
-هرچه یک پروتکل پرکاربردتر شود، عوض کردنش سخت‌تر می‌شود.
+وقتی یک فهرست مرکزی دیگر مقیاس ندارد، باید توزیعش کرد؛ DNS همین تصمیم بود.
+
+---
+type: interactive
+module: M1
+minutes: 3
+link: none
+---
+
+# چرا IPv6 را نمی‌شود مثل ۱۹۸۳ یک‌شبه جایگزین کرد؟
+
+IPv6، نسخهٔ تازهٔ نشانی‌های اینترنت، از ۱۹۹۸ استاندارد است؛ سهمش در آمار Google تازه اردیبهشت ۱۴۰۵ به ۵۰٪ رسید.
+
+<ol class="options">
+  <li><b>الف)</b> IPv6 هنوز کامل نشده</li>
+  <li><b>ب)</b> IPv6 کندتر است</li>
+  <li v-mark.box.orange="1"><b>ج)</b> کسی نیست که روز کوچ را تعیین کند</li>
+  <li><b>د)</b> قانون جلویش را گرفته</li>
+</ol>
+
+<div v-click="1" class="answer"><strong>پاسخ: ج)</strong> در ۱۹۸۳ یک متولی برای شبکه‌ای کوچک تاریخ گذاشت؛ امروز هزاران اپراتور مستقل هست و هرکدام هزینهٔ کوچ خودش را می‌دهد، و NAT (چند دستگاه پشت یک نشانی) کمبود را موقتاً پوشانده است (<a href="https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/">APNIC</a>).</div>
+
+::punch::
+
+<div v-click="1">شبکهٔ بی‌مرکز را کسی نمی‌تواند خاموش کند، ولی با یک دستور هم نمی‌شود عوضش کرد.</div>
 
 ---
 layout: section
@@ -209,21 +206,28 @@ corner: وب
 دو تا از این سه اختراع، موضوع همین درس‌اند.
 
 ---
+type: interactive
 module: M2
-minutes: 2
+minutes: 3
 link: none
-corner: وب
 ---
 
 # چرا وب برنده شد و Gopher نه؟
 
-- در ۱۹۹۳ [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol)) از وب محبوب‌تر بود
-- همان سال دانشگاه مینه‌سوتا اعلام کرد برای استفادهٔ تجاری از سرور Gopher [هزینهٔ مجوز]{.mark} می‌گیرد
-- کمی بعد، در ۳۰ آوریل ۱۹۹۳، CERN نرم‌افزار وب را [رایگان و برای همه](https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web) اعلام کرد؛ توسعه‌دهندگان به سمت وب رفتند
+در ۱۹۹۳ [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol))، سامانهٔ منویی دانشگاه مینه‌سوتا برای پیدا کردن سند، از وب محبوب‌تر بود.
+
+<ol class="options">
+  <li><b>الف)</b> سرعت بیشتر وب</li>
+  <li><b>ب)</b> نمایش تصویر در وب</li>
+  <li v-mark.box.orange="1"><b>ج)</b> مجوز: Gopher پولی شد، وب رایگان</li>
+  <li><b>د)</b> پشتیبانی یک شرکت بزرگ</li>
+</ol>
+
+<div v-click="1" class="answer"><strong>پاسخ: ج)</strong> در ۱۹۹۳ دانشگاه مینه‌سوتا برای استفادهٔ تجاری از سرور Gopher هزینهٔ مجوز خواست؛ در ۳۰ آوریل همان سال CERN نرم‌افزار وب را <a href="https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">رایگان و برای همه</a> اعلام کرد. تصویر هم کمک کرد، ولی نقطهٔ برگشت مجوز بود.</div>
 
 ::punch::
 
-در پروتکل‌ها، باز بودن اغلب از بهتر بودن مهم‌تر است.
+<div v-click="1">در پروتکل‌ها، باز بودن اغلب از بهتر بودن مهم‌تر است.</div>
 
 ---
 module: M2
@@ -237,9 +241,9 @@ corner: ایران
 <div class="cols">
 <div>
 
-- ۱۳۶۸: پژوهشگاه دانش‌های بنیادی (IPM) به شبکهٔ علمی BITNET وصل شد؛ بیشتر برای ایمیل
-- ۱۳۷۲: نخستین اتصال اینترنتی ایران از همان پژوهشگاه و از راه دانشگاه وین، با [پهنای باندی در حد ایمیل]{.mark}
-- ۱۳۷۳: دامنهٔ ملی `.ir` در IPM راه افتاد و ندا رایانه نخستین اینترنت شماره‌گیر عمومی را عرضه کرد
+- دی ۱۳۷۱ (ژانویهٔ ۱۹۹۳): پژوهشگاه دانش‌های بنیادی (IPM) با یک خط اجاره‌ای [۹۶۰۰ baud]{.mark} به دانشگاه وین وصل شد؛ نخست روی شبکهٔ علمی BITNET و برای ایمیل ([NSRC](https://nsrc.org/regions/MIDEAST/IR/internet-iran-2001.pdf))
+- سپس همین خط اتصال کامل اینترنت شد و ایران ۵۰۰ نشانی IP گرفت؛ با این سرعت، دریافت یک عکس یک‌مگابایتی حدود ربع ساعت طول می‌کشید
+- فروردین ۱۳۷۳: دامنهٔ [`.ir`](https://en.wikipedia.org/wiki/.ir) با متولی‌گری IPM ثبت شد، و از بهار همان سال [ندا رایانه](https://iranian.com/WebGuide/InternetIran/InternetIran.html) خدمات اینترنت را به عموم عرضه کرد
 
 </div>
 <EraArt art="iran" label="تهران، وین، اینترنت" />
@@ -276,7 +280,7 @@ corner: مرورگرها
 <div>
 
 - [Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)) (۱۹۹۳) اولین مرورگر پرطرفداری بود که تصویر را کنار متن نشان می‌داد
-- سازندگانش [Netscape](https://en.wikipedia.org/wiki/Netscape) را ساختند؛ عرضهٔ سهام آن در اوت ۱۹۹۵ آغاز تب دات‌کام بود
+- سازندگانش [Netscape](https://en.wikipedia.org/wiki/Netscape) را ساختند؛ عرضهٔ سهام آن در اوت ۱۹۹۵ آغاز تب دات‌کام بود، و یک ماه بعد [پی‌یر امیدیار](https://en.wikipedia.org/wiki/Pierre_Omidyar)، ایرانی‌تبار، eBay را راه انداخت
 - وب از ابزار دانشگاهی به [محصولی برای همه]{.mark} تبدیل شد
 
 </div>
@@ -286,28 +290,6 @@ corner: مرورگرها
 ::punch::
 
 رابط کاربری خوب، یک پروتکل را از آزمایشگاه به خانه‌ها برد.
-
----
-type: interactive
-module: M3
-minutes: 3
-link: none
----
-
-# JavaScript در چند روز ساخته شد؟
-
-<ol class="options">
-  <li v-mark.box.orange="1"><b>الف)</b> ۱۰ روز</li>
-  <li><b>ب)</b> ۱۰ هفته</li>
-  <li><b>ج)</b> ۶ ماه</li>
-  <li><b>د)</b> ۲ سال</li>
-</ol>
-
-<div v-click="1" class="answer"><strong>پاسخ: الف)</strong> برندن آیک در مه ۱۹۹۵ نسخهٔ اول <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript">JavaScript</a> را در حدود ده روز در Netscape نوشت؛ بعضی تصمیم‌های عجولانهٔ همان ده روز هنوز در زبان مانده‌اند.</div>
-
-::punch::
-
-<div v-click="1">تصمیمی که در ده روز گرفته شود، ممکن است سی سال بماند.</div>
 
 ---
 module: M3
@@ -323,7 +305,7 @@ corner: مرورگرها
 
 - [کوکی](https://developer.mozilla.org/en-US/docs/Glossary/Cookie) (۱۹۹۴): راهی برای اینکه پروتکل بی‌حالت، کاربر را به یاد بیاورد (جلسهٔ ۳)
 - [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) (۱۹۹۵): رمزنگاری برای خرید اینترنتی؛ نوادهٔ امروزی‌اش TLS است (جلسهٔ ۴)
-- JavaScript (۱۹۹۵): برنامه‌ای که [داخل صفحه اجرا می‌شود]{.mark}
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript) (۱۹۹۵): برنامه‌ای که [داخل صفحه اجرا می‌شود]{.mark}؛ نسخهٔ اولش در حدود ده روز نوشته شد
 
 </div>
 <EraArt art="war1" label="کوکی و SSL و JavaScript" />
@@ -332,6 +314,30 @@ corner: مرورگرها
 ::punch::
 
 هر سه برای حل یک مشکل تجاری فوری ساخته شدند و هر سه امروز استاندارد جهانی‌اند.
+
+---
+type: interactive
+module: M3
+minutes: 3
+link: none
+---
+
+# چرا `flatten` در JavaScript به `flat` تغییر نام داد؟
+
+بهار ۱۳۹۷ قرار بود آرایه‌های JavaScript متد `flatten` بگیرند؛ در آخرین لحظه نامش `flat` شد.
+
+<ol class="options">
+  <li><b>الف)</b> <code>flat</code> کوتاه‌تر بود</li>
+  <li v-mark.box.orange="1"><b>ب)</b> سایت‌های قدیمی می‌شکستند</li>
+  <li><b>ج)</b> <code>flatten</code> ثبت تجاری داشت</li>
+  <li><b>د)</b> هماهنگی با Python</li>
+</ol>
+
+<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> کتابخانهٔ قدیمی MooTools خودش <code>flatten</code> را به آرایه‌ها اضافه کرده بود و نسخهٔ استاندارد سایت‌هایی را که دیگر کسی به‌روزشان نمی‌کرد می‌شکست؛ کمیته نام را عوض کرد، نه وب را (<a href="https://developer.chrome.com/blog/smooshgate">SmooshGate</a>).</div>
+
+::punch::
+
+<div v-click="1">«وب را نشکن»: تصمیمی که یک بار در وب پخش شد، دیگر پس گرفته نمی‌شود.</div>
 
 ---
 module: M3
@@ -435,8 +441,9 @@ corner: وب باز
 <div>
 
 - [iPhone](https://en.wikipedia.org/wiki/IPhone_(1st_generation)) (۲۰۰۷) یک مرورگر کامل را به گوشی آورد
-- [Chrome](https://en.wikipedia.org/wiki/Google_Chrome) (۲۰۰۸) هر زبانه را در یک پردازهٔ جدا اجرا کرد و موتور JavaScript سریعی به نام V8 آورد
+- [Chrome](https://en.wikipedia.org/wiki/Google_Chrome) (۲۰۰۸) هر زبانه را در پردازه‌ای جدا اجرا کرد و موتور JavaScript سریع V8 را آورد
 - چند سال بعد ترافیک وب از گوشی‌ها از رایانه‌های رومیزی بیشتر شد و [کندی شبکه]{.mark} دوباره مسئلهٔ اصلی شد
+- در ایران، ایرانسل اینترنت ۳G و ۴G را [۴ شهریور ۱۳۹۳](https://irancell.ir/en/p/4852/irancell-background) به‌صورت تجاری عرضه کرد؛ هفت سال بعد از iPhone
 
 </div>
 <Shot src="images/iphone-2007.jpg" wiki="IPhone First Generation.jpg" alt="نخستین iPhone" caption="نخستین iPhone (۲۰۰۷): مرورگر کامل در جیب" h="320" />
@@ -462,7 +469,7 @@ link: none
   <li><b>د)</b> Trident (IE)</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: الف)</strong> Chrome و Edge و Opera و Brave، و حتی مرورگرهای هوش مصنوعی مثل Comet و ChatGPT Atlas، همه روی Chromium ساخته شده‌اند؛ Edge در ۲۰۲۰ موتور خودش را کنار گذاشت.</div>
+<div v-click="1" class="answer"><strong>پاسخ: الف)</strong> Chrome و Edge و Opera و Brave، و حتی مرورگرهای هوش مصنوعی مثل Comet و ChatGPT Atlas، همه روی Chromium ساخته شده‌اند؛ Edge در ۲۰۲۰ موتور خودش را کنار گذاشت. در ۱۱ شهریور ۱۴۰۴ دادگاهی در آمریکا حکم به فروش اجباری Chrome نداد و یکی از دلیل‌هایش رقابت تازهٔ هوش مصنوعی بود (<a href="https://www.npr.org/2025/09/02/nx-s1-5478625/google-chrome-doj-antitrust-ruling">NPR</a>).</div>
 
 ::punch::
 
@@ -486,6 +493,23 @@ link: none
 module: M5
 minutes: 2
 link: none
+corner: ایران
+---
+
+# سناریوی واقعی: گواهی جعلی Gmail در ایران
+
+- گواهی را یک CA، یعنی صادرکنندهٔ مورد اعتماد، امضا می‌کند تا مرورگر بداند با خود `google.com` حرف می‌زند (جلسهٔ ۴)
+- تیر ۱۳۹۰ نفوذگری از DigiNotar هلندی گواهی جعلی `*.google.com` گرفت؛ به گزارش [Fox-IT](https://www.bitsoffreedom.nl/wp-content/uploads/rapport-fox-it-operation-black-tulip-v1-0.pdf) حدود ۳۰۰ هزار نشانی IP که ۹۹٪ از ایران بودند با آن به میانجی وصل شدند
+- ۵ شهریور ۱۳۹۰ کاربری در ایران [گزارش داد](https://slate.com/technology/2016/12/how-the-2011-hack-of-diginotar-changed-the-internets-infrastructure.html) Chrome اتصال به Gmail را قطع می‌کند: Chrome برای Google [فقط گواهی‌های مشخصی را می‌پذیرفت]{.mark} (certificate pinning)
+
+::punch::
+
+یک CA خراب کافی بود؛ پاسخ صنعت [Certificate Transparency](https://certificate.transparency.dev/) شد: هر گواهی در فهرستی عمومی ثبت می‌شود.
+
+---
+module: M5
+minutes: 2
+link: none
 corner: امنیت
 ---
 
@@ -496,7 +520,7 @@ corner: امنیت
 
 - در ۲۰۱۳ اسناد [اسنودن](https://en.wikipedia.org/wiki/Edward_Snowden) نشان داد شنود گستردهٔ اینترنت واقعی است
 - رمزنگاری Google فقط تا لبهٔ شبکه‌اش بود و ترافیک بین مراکز داده‌اش [بدون رمز]{.mark} شنود می‌شد ([MUSCULAR](https://www.washingtonpost.com/world/national-security/nsa-infiltrates-links-to-yahoo-google-data-centers-worldwide-snowden-documents-say/2013/10/30/e51d661e-4166-11e3-8b74-d89d714ca4dd_story.html))؛ Google و Yahoo بعد از آن این ترافیک را هم رمز کردند
-- نهاد استانداردهای اینترنت، [IETF](https://www.ietf.org/)، در [RFC 7258](https://www.rfc-editor.org/rfc/rfc7258) اعلام کرد [شنود فراگیر یک حمله است]{.mark} و رمزنگاری پیش‌فرض پروتکل‌های تازه شد
+- نهاد استانداردهای اینترنت، [IETF](https://www.ietf.org/)، در [RFC 7258](https://www.rfc-editor.org/rfc/rfc7258) اعلام کرد [شنود فراگیر یک حمله است]{.mark}؛ پس از آن پروتکل‌های تازه مثل QUIC رمزنگاری را اجباری کردند
 
 </div>
 <Shot src="images/nsa-muscular.jpg" wiki="NSA Muscular Google Cloud.jpg" alt="اسلاید سند NSA با یادداشت SSL added and removed here" caption="سند NSA در ۲۰۱۳: «SSL added and removed here»" h="300" />
@@ -520,7 +544,7 @@ corner: امنیت
 
 - [Let's Encrypt](https://en.wikipedia.org/wiki/Let%27s_Encrypt) از ۲۰۱۵ گواهی HTTPS را [رایگان و خودکار]{.mark} کرد
 - از Chrome 68 در مرداد ۱۳۹۷، هر صفحهٔ http با برچسب «Not secure» نشان داده می‌شود
-- هزینه و زحمت گواهی حذف شد و فشار مرورگر بقیهٔ کار را کرد
+- از ۲۴ اسفند ۱۴۰۴ عمر گواهی حداکثر ۲۰۰ روز است و تا ۲۰۲۹ به [۴۷ روز](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days) می‌رسد؛ تمدید دستی عملاً ناممکن و [خودکارسازی اجباری]{.mark} می‌شود
 
 </div>
 <EraArt art="secure" label="قفل HTTPS و HTTP/2 و HTTP/3" />
@@ -540,8 +564,8 @@ corner: سرعت
 # چطور HTTP را بدون شکستن وب بازنویسی کنیم؟
 
 - Google در ۲۰۰۹ پروتکل آزمایشی [SPDY](https://en.wikipedia.org/wiki/SPDY) را روی Chrome و سرورهای خودش امتحان کرد
-- SPDY پایهٔ [HTTP/2](https://www.rfc-editor.org/rfc/rfc9113) در ۲۰۱۵ شد، و آزمایش بعدی، QUIC، پایهٔ [HTTP/3](https://www.rfc-editor.org/rfc/rfc9114) در ۲۰۲۲
-- [معنای HTTP ثابت ماند]{.mark} و فقط قالب انتقال عوض شد؛ برای همین هیچ سایتی نشکست (جلسهٔ ۴)
+- SPDY پایهٔ [HTTP/2](https://www.rfc-editor.org/rfc/rfc7540) در ۲۰۱۵ شد، و آزمایش بعدی، QUIC، پایهٔ [HTTP/3](https://www.rfc-editor.org/rfc/rfc9114) در ۲۰۲۲
+- [معنای HTTP ثابت ماند]{.mark} و فقط قالب انتقال عوض شد؛ مرورگر و سرور نسخه را با هم توافق می‌کنند و اگر یکی بلد نبود به HTTP/1.1 برمی‌گردند، پس سایت‌ها مجبور به تغییر نشدند (جلسهٔ ۴)
 
 ::punch::
 
@@ -556,14 +580,16 @@ link: none
 
 # چرا HTTP/3 روی UDP ساخته شد، نه روی یک پروتکل انتقال تازه؟
 
+TCP و UDP دو پروتکل انتقال اصلی‌اند؛ HTTP/3 روی QUIC و QUIC روی UDP ساخته شد.
+
 <ol class="options">
-  <li><b>الف)</b> UDP ذاتاً از هر پروتکلی سریع‌تر است</li>
-  <li v-mark.box.orange="1"><b>ب)</b> فایروال‌ها و NATها پروتکل ناشناخته را می‌اندازند</li>
-  <li><b>ج)</b> TCP منسوخ و ممنوع شده است</li>
+  <li><b>الف)</b> UDP ذاتاً سریع‌تر است</li>
+  <li v-mark.box.orange="1"><b>ب)</b> تجهیزات میان راه پروتکل ناشناخته را می‌اندازند</li>
+  <li><b>ج)</b> TCP منسوخ شده است</li>
   <li><b>د)</b> UDP رمزنگاری داخلی دارد</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> تجهیزات میان راه فقط TCP و UDP را می‌شناسند و پروتکل تازه از آن‌ها رد نمی‌شد. QUIC روی UDP سوار شد و بقیهٔ کار را خودش، رمزشده، انجام داد. نام این پدیده <a href="https://en.wikipedia.org/wiki/Protocol_ossification">ossification</a> است.</div>
+<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> فایروال و NAT بیشتر فقط TCP و UDP را می‌شناسند (<a href="https://en.wikipedia.org/wiki/Protocol_ossification">ossification</a>)؛ دلیل دوم: TCP در هستهٔ سیستم‌عامل دیر عوض می‌شود، ولی QUIC در خود مرورگر است (<a href="https://dl.acm.org/doi/10.1145/3098822.3098842">مقالهٔ طراحان</a>).</div>
 
 ::punch::
 
@@ -623,7 +649,7 @@ link: none
   <li><b>د)</b> بات‌ها، بیش از ۹۰ درصد</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: ج)</strong> طبق <a href="https://www.imperva.com/resources/resource-library/reports/2025-bad-bot-report/">گزارش Imperva</a>، در ۲۰۲۴ برای اولین بار در یک دهه ترافیک خودکار از انسان بیشتر شد: ۵۱ درصد؛ و ۳۷ درصد کل ترافیک بات‌های مخرب بودند.</div>
+<div v-click="1" class="answer"><strong>پاسخ: ج)</strong> در ۲۰۲۴ برای اولین بار در یک دهه ترافیک خودکار از انسان بیشتر شد (۵۱ درصد)، و طبق <a href="https://www.imperva.com/blog/bad-bot-report-2026-bots-agentic-age/">گزارش ۱۴۰۵ Imperva</a> در ۲۰۲۵ به ۵۳ درصد رسید؛ agentهای هوش مصنوعی، یعنی برنامه‌هایی که به‌جای کاربر وب را می‌گردند و کار انجام می‌دهند، حالا دستهٔ تازه‌ای از این ترافیک‌اند.</div>
 
 ::punch::
 
@@ -639,8 +665,8 @@ corner: هوش مصنوعی
 # سایت‌ها با خزنده‌های هوش مصنوعی چه می‌کنند؟
 
 - فایل [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) از ۱۹۹۴ فقط یک «خواهش» است، نه قفل
-- در تیر ۱۴۰۴ Cloudflare خزنده‌های هوش مصنوعی را [به‌طور پیش‌فرض مسدود کرد]{.mark} و «پرداخت به ازای خزیدن» را معرفی کرد
-- کد وضعیت [402](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402)، «پرداخت لازم است»، که نزدیک سه دهه بی‌استفاده مانده بود دوباره زنده شد (جلسهٔ ۷)
+- در تیر ۱۴۰۴ Cloudflare برای دامنه‌های تازه خزنده‌های هوش مصنوعی را [پیش‌فرض مسدود کرد]{.mark}؛ در [تیر ۱۴۰۵](https://blog.cloudflare.com/content-independence-day-ai-options/) بات جستجو و agent و آموزش را از هم جدا کرد
+- کد وضعیت [402](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402)، «پرداخت لازم است»، نزدیک سه دهه بی‌استفاده ماند تا [x402](https://www.infoq.com/news/2026/07/cloudflare-aws-x402-micropayment/): سرور 402 و قیمت را برمی‌گرداند و agent می‌پردازد؛ AWS از خرداد ۱۴۰۵ آن را ارائه می‌دهد (جلسهٔ ۷)
 
 ::punch::
 
@@ -655,7 +681,7 @@ corner: هوش مصنوعی
 
 # وقتی agent به‌جای شما مرور می‌کند
 
-- مرورگرهای هوش مصنوعی مثل Comet (تیر ۱۴۰۴) و ChatGPT Atlas (مهر ۱۴۰۴) خودشان صفحه باز می‌کنند، فرم پر می‌کنند و حتی خرید می‌کنند
+- مرورگرهای هوش مصنوعی مثل Comet (تیر ۱۴۰۴) و ChatGPT Atlas (مهر ۱۴۰۴) خودشان صفحه باز می‌کنند، فرم پر می‌کنند و حتی خرید می‌کنند؛ از [بهمن ۱۴۰۴](https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/) خود Chrome هم با auto browse همین کار را می‌کند
 - [MCP](https://modelcontextprotocol.io) (آذر ۱۴۰۳) پروتکلی است که agentها با آن به ابزارها و داده‌ها وصل می‌شوند
 - پژوهشگران امنیتی در همان ماه‌های اول، [prompt injection](https://simonwillison.net/tags/prompt-injection/) را در مرورگر Comet نشان دادند؛ [صفحه‌ای که agent می‌خواند، می‌تواند به او دستور بدهد]{.mark} (جلسهٔ ۱)
 
@@ -672,9 +698,10 @@ corner: هوش مصنوعی
 
 # تاریخ تکرار می‌شود: MCP چه چیزی را دوباره کشف کرد؟
 
-- [بازنگری ۲۰۲۶ مشخصات MCP](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/) session سطح پروتکل را حذف کرد: [بی‌حالتی]{.mark}، همان تصمیم HTTP در دههٔ ۱۹۹۰
-- نتیجه‌ها زمان اعتبار قابل‌cache گرفتند، با الگوبرداری از `Cache-Control` در HTTP (جلسهٔ ۵)
-- هدرهایی اضافه شد تا load balancer بدون خواندن body درخواست را مسیریابی کند (جلسهٔ ۷)
+- [مشخصات تازهٔ MCP](https://blog.modelcontextprotocol.io/posts/2026-07-28/) (مرداد ۱۴۰۵) session، یعنی حافظهٔ سرور از گفتگو، را حذف کرد: [بی‌حالتی]{.mark} مثل HTTP
+- state به برنامه رفت: سرور شناسه‌ای می‌دهد و مدل آن را پس می‌فرستد، مثل کوکی (جلسهٔ ۳)
+- پاسخ‌ها زمان اعتبار گرفتند، شبیه `max-age` در `Cache-Control` (جلسهٔ ۵)
+- هدر `Mcp-Method` آمد تا واسطه‌ها بدون خواندن بدنهٔ درخواست مسیریابی کنند (جلسهٔ ۷)
 
 ::punch::
 
@@ -705,14 +732,14 @@ corner: جمع‌بندی
 
 | الگو | نمونه‌ها |
 | --- | --- |
-| باز بودن معمولاً برنده می‌شود | وب در برابر Gopher؛ TCP/IP |
-| انحصار، استاندارد را متوقف می‌کند | IE6؛ نگرانی امروز از یک‌دستی Chromium |
-| هرچه پرکاربردتر، عوض کردنش سخت‌تر | کوچ یک‌شبهٔ ۱۹۸۳؛ IPv6؛ QUIC روی UDP |
-| امنیتی که دیر اضافه شود گران تمام می‌شود | SSL به‌عنوان افزونه؛ HTTPS همه‌جا بعد از ۲۰۱۳ |
+| باز بودن معمولاً برنده می‌شود | وب در برابر Gopher، و TCP/IP |
+| انحصار و تمرکز شکننده است | IE6 و Chromium و قطعی AWS در مهر ۱۴۰۴ |
+| هرچه پرکاربردتر، عوض کردنش سخت‌تر | IPv6 و SmooshGate و QUIC روی UDP |
+| امنیت دیرهنگام گران است | DigiNotar؛ و این بار زودتر، رمزنگاری [پساکوانتومی](https://blog.cloudflare.com/post-quantum-roadmap/) |
 
 ::punch::
 
-در طول این درس، هر جا یکی از این چهار الگو را دیدید، علامتش بزنید.
+هر جا یکی از این الگوها را دیدید علامتش بزنید؛ اولین بار در تمرین ۰.
 
 ---
 module: M7
@@ -758,13 +785,13 @@ link: none
 corner: تمرین
 ---
 
-# تمرین ۰: یک درخواست کجا وقت می‌گذراند؟
+# تمرین ۰: یک درخواست به چه کسانی وابسته است؟
 
 <Exercise ex="00-toolbox" due="تا شب پیش از جلسهٔ ۱">
 <dl class="run">
-  <dt>چالش</dt><dd>ابزارها و مخزن تحویل را آماده کنید؛ بعد با <code>curl</code> زمان هر مرحلهٔ رسیدن به سه سایت را بسنجید و سهم هر مرحله را توضیح دهید.</dd>
-  <dt>پیش‌بینی</dt><dd>همین حالا روی کاغذ: در اولین درخواست کدام مرحله کندتر است، پیدا کردن نشانی یا اتصال یا TLS یا انتظار برای پاسخ؟ در درخواست دوم چه عوض می‌شود؟</dd>
-  <dt>پل</dt><dd>همین مرحله‌ها موضوع جلسهٔ ۱ است.</dd>
+  <dt>چالش</dt><dd>برای سه سایت، یکی ایرانی، زمان هر مرحلهٔ رسیدن را با <code>curl</code> بسنجید و نقشهٔ وابستگی‌اش را بکشید: چه کسی نام‌هایش را پاسخ می‌دهد، سرورش مال کیست و گواهی‌اش را چه کسی صادر کرده.</dd>
+  <dt>پیش‌بینی</dt><dd>همین حالا روی کاغذ: در اولین درخواست به سایت ایرانی‌تان کدام مرحله کندتر است، و اگر قطعی ۲۸ مهر تکرار شود آن سایت از کار می‌افتد؟</dd>
+  <dt>پل</dt><dd>همین حلقه‌ها و وابستگی‌ها موضوع جلسهٔ ۱ است.</dd>
 </dl>
 </Exercise>
 
@@ -789,7 +816,7 @@ corner: جمع‌بندی
 
 <ol class="curious">
   <li>چرا اولین پیام اینترنت بعد از دو حرف قطع شد، و در آن سال‌ها «از کار افتادن» یک گره چه معنایی داشت؟<span class="hint">روایت لئونارد کلاینراک از شب ۲۹ اکتبر ۱۹۶۹.</span></li>
-  <li>چرا Gopher با وجود محبوبیت بیشتر در ۱۹۹۳ کنار رفت؟<span class="hint">اعلام هزینهٔ مجوز دانشگاه مینه‌سوتا، و بیانیهٔ ۳۰ آوریل ۱۹۹۳ CERN.</span></li>
+  <li>چرا در بعضی سایت‌های فارسی جستجوی «کیک» نتیجهٔ «كيك» را پیدا نمی‌کند، با اینکه روی صفحه یکی به نظر می‌رسند؟<span class="hint">«ی» فارسی و «ي» عربی در Unicode دو نویسهٔ جدا هستند (<code>U+06CC</code> و <code>U+064A</code>)؛ استاندارد صفحه‌کلید فارسی ISIRI 9147 (فروردین ۱۳۸۶) را هم ببینید.</span></li>
   <li>RFC 7258 دقیقاً از طراحان پروتکل چه می‌خواهد؟<span class="hint">متن خود RFC را بخوانید؛ فقط چند صفحه است.</span></li>
 </ol>
 
@@ -804,7 +831,7 @@ corner: جمع‌بندی
 # برای کنجکاوی بیشتر (۲ از ۲)
 
 <ol class="curious" style="counter-reset: q 3">
-  <li>چرا IPv6 بعد از ربع قرن هنوز همه‌جا نیست؟<span class="hint">آمار پذیرش IPv6 در Google، و نقش NAT.</span></li>
+  <li>چرا یک خطای DNS در یک منطقهٔ AWS، سرویس‌هایی را در سراسر دنیا انداخت و چرا بازگشت کامل ساعت‌ها بیشتر از رفع خود خطا طول کشید؟<span class="hint">بخش‌های DynamoDB و EC2 در گزارش رسمی AWS، و نقش منطقهٔ us-east-1.</span></li>
   <li>اگر یک agent به‌جای شما خرید کند، سایت از کجا بفهمد آن agent مجاز است؟<span class="hint">Web Bot Auth و امضای درخواست‌های HTTP.</span></li>
 </ol>
 
@@ -816,23 +843,59 @@ link: none
 corner: منابع
 ---
 
-# منابع
+# منابع (۱ از ۲)
 
 <ul class="src two">
   <li><a href="https://aws.amazon.com/message/101925/">گزارش AWS از قطعی ۲۸ مهر ۱۴۰۴ <bdi>(20 Oct 2025)</bdi></a></li>
   <li><a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a> · <a href="https://en.wikipedia.org/wiki/Paul_Baran">Paul Baran</a> · <a href="https://www.americanhistory.si.edu/explore/stories/internet-uttered-lo-forty-years-ago">Smithsonian: LO</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Flag_day_(computing)">Flag day (computing)</a></li>
-  <li><a href="https://info.cern.ch">info.cern.ch: نخستین وب‌سایت</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">History of the World Wide Web</a> · <a href="https://www.w3.org/History/1989/proposal.html">پیشنهاد ۱۹۸۹</a></li>
-  <li><a href="https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA_%D8%AF%D8%B1_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86">ویکی‌پدیا: اینترنت در ایران</a></li>
-  <li><a href="https://barghchi.com/mag/history-of-internet/">برقچی: تاریخچهٔ اینترنت در ایران</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Browser_wars">Browser wars</a></li>
-  <li><a href="https://whatwg.org/">WHATWG</a></li>
-  <li><a href="https://www.rfc-editor.org/rfc/rfc7258">RFC 7258</a> · <a href="https://www.rfc-editor.org/rfc/rfc9114">RFC 9114</a></li>
-  <li><a href="https://www.washingtonpost.com/world/national-security/nsa-infiltrates-links-to-yahoo-google-data-centers-worldwide-snowden-documents-say/2013/10/30/e51d661e-4166-11e3-8b74-d89d714ca4dd_story.html">Washington Post: MUSCULAR</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Protocol_ossification">Protocol ossification</a></li>
-  <li><a href="https://www.imperva.com/resources/resource-library/reports/2025-bad-bot-report/">Imperva: 2025 Bad Bot Report</a></li>
-  <li><a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">Cloudflare: pay per crawl</a></li>
-  <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">MCP: 2026-07-28 release</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Flag_day_(computing)">Flag day (computing)</a> · <a href="https://www.rfc-editor.org/rfc/rfc801">RFC 801</a></li>
+  <li><a href="https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/">APNIC: IPv6 در آمار Google</a></li>
+  <li><a href="https://info.cern.ch">info.cern.ch: نخستین وب‌سایت</a> · <a href="https://www.w3.org/History/1989/proposal.html">پیشنهاد ۱۹۸۹</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">History of the World Wide Web</a></li>
+  <li><a href="https://nsrc.org/regions/MIDEAST/IR/internet-iran-2001.pdf">NSRC: Iran's Telecom and Internet Sector</a></li>
+  <li><a href="https://iranian.com/WebGuide/InternetIran/InternetIran.html">The Iranian: The Internet in Iran (۱۹۹۷)</a> · <a href="https://en.wikipedia.org/wiki/.ir">.ir</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Browser_wars">Browser wars</a> · <a href="https://en.wikipedia.org/wiki/Pierre_Omidyar">Pierre Omidyar</a></li>
+  <li><a href="https://developer.chrome.com/blog/smooshgate">SmooshGate</a> · <a href="https://whatwg.org/">WHATWG</a></li>
+  <li><a href="https://irancell.ir/en/p/4852/irancell-background">Irancell: تاریخچه</a> · <a href="https://www.npr.org/2025/09/02/nx-s1-5478625/google-chrome-doj-antitrust-ruling">NPR: حکم Chrome</a></li>
   <li>تصویرها: ویکی‌مدیا؛ صاحب اثر و مجوز زیر هر تصویر</li>
 </ul>
+
+---
+type: reserve
+module: M7
+minutes: 0
+link: none
+corner: منابع
+---
+
+# منابع (۲ از ۲)
+
+<ul class="src two">
+  <li><a href="https://www.bitsoffreedom.nl/wp-content/uploads/rapport-fox-it-operation-black-tulip-v1-0.pdf">Fox-IT: Operation Black Tulip</a> · <a href="https://slate.com/technology/2016/12/how-the-2011-hack-of-diginotar-changed-the-internets-infrastructure.html">Slate: DigiNotar</a></li>
+  <li><a href="https://certificate.transparency.dev/">Certificate Transparency</a> · <a href="https://www.rfc-editor.org/rfc/rfc6962">RFC 6962</a></li>
+  <li><a href="https://www.washingtonpost.com/world/national-security/nsa-infiltrates-links-to-yahoo-google-data-centers-worldwide-snowden-documents-say/2013/10/30/e51d661e-4166-11e3-8b74-d89d714ca4dd_story.html">Washington Post: MUSCULAR</a> · <a href="https://www.rfc-editor.org/rfc/rfc7258">RFC 7258</a></li>
+  <li><a href="https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days">DigiCert: گواهی ۴۷ روزه</a> · <a href="https://blog.cloudflare.com/post-quantum-roadmap/">Cloudflare: پساکوانتومی</a></li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc7540">RFC 7540</a> · <a href="https://www.rfc-editor.org/rfc/rfc9114">RFC 9114</a> · <a href="https://dl.acm.org/doi/10.1145/3098822.3098842">مقالهٔ QUIC</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Protocol_ossification">Protocol ossification</a></li>
+  <li><a href="https://www.imperva.com/blog/bad-bot-report-2026-bots-agentic-age/">Imperva: Bad Bot Report 2026</a></li>
+  <li><a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare: ترافیک هوش مصنوعی (۱۴۰۵)</a></li>
+  <li><a href="https://www.infoq.com/news/2026/07/cloudflare-aws-x402-micropayment/">InfoQ: x402 در Cloudflare و AWS</a></li>
+  <li><a href="https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/">TechCrunch: auto browse در Chrome</a></li>
+  <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">MCP: مشخصات مرداد ۱۴۰۵</a></li>
+</ul>
+
+---
+type: reserve
+module: M7
+minutes: 0
+link: none
+corner: تمرین
+---
+
+# نمونهٔ خروجی تمرین ۰
+
+<Shot src="images/ex00-sample.png" alt="خروجی curl و dig برای scu.ac.ir" how="از شبکهٔ دانشگاه با VPN خاموش: دستور curl تمرین ۰ دو بار برای scu.ac.ir، سپس dig NS scu.ac.ir؛ اسکرین‌شات ترمینال." h="380" />
+
+::punch::
+
+عددهای شما فرق می‌کند؛ مهم این است که بگویید چرا.
