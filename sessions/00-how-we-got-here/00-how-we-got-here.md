@@ -64,11 +64,11 @@ minutes: 0
 link: none
 ---
 
-# شبکه‌ای برای روز مبادا
+# شبکهٔ شبکه‌ها
 
 <p class="since">دهه‌های ۱۹۶۰ و ۱۹۷۰؛ هنوز نه وبی بود، نه مرورگری.</p>
 
-<p class="question">چطور شبکه‌ای بسازیم که با از کار افتادن هر بخشش، از کار نیفتد؟</p>
+<p class="question">چطور کامپیوترها و شبکه‌های ناهمگون را به هم وصل کنیم، بی‌آنکه یک مرکز همه را اداره کند؟</p>
 
 ---
 module: M1
@@ -82,9 +82,9 @@ corner: ARPANET
 <div class="cols">
 <div>
 
-- در اوایل دههٔ ۱۹۶۰ [پل باران](https://en.wikipedia.org/wiki/Paul_Baran) نشان داد شبکهٔ [توزیع‌شده]{.mark} با از دست دادن بخشی از گره‌ها هنوز کار می‌کند، ولی شبکهٔ متمرکز با یک خرابی می‌میرد
-- دانلد دیویس در بریتانیا نام [packet](https://en.wikipedia.org/wiki/Packet_switching) را گذاشت: پیام را تکه‌تکه کن و هر تکه را جدا بفرست
-- همین ایده پایهٔ ARPANET شد که در ۱۹۶۹ چهار مرکز پژوهشی و دانشگاهی آمریکا را به هم وصل کرد
+- دههٔ ۱۹۶۰: [پل باران](https://en.wikipedia.org/wiki/Paul_Baran) برای بقا در جنگ، شبکهٔ توزیع‌شده را پیشنهاد داد و دیویس نامش را [packet](https://en.wikipedia.org/wiki/Packet_switching) گذاشت
+- ARPANET (۱۹۶۹) این ایده را برای اشتراک کامپیوترهای گران به کار برد؛ «شبکهٔ ضد بمب اتمی» [افسانه است](https://www.internetsociety.org/internet/history-internet/brief-history-internet/)
+- ۱۹۷۴: [Cerf و Kahn](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf) با TCP/IP شبکه‌ها را به هم وصل کردند: [شبکهٔ شبکه‌ها]{.mark}؛ شبکه فقط بسته می‌رساند و هوشمندی در دو سر است ([end-to-end](https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf))
 
 </div>
 <EraArt art="mesh" label="شبکهٔ متمرکز در برابر توزیع‌شده" />
@@ -92,7 +92,7 @@ corner: ARPANET
 
 ::punch::
 
-طراحی بدون مرکز یعنی هیچ‌کس نمی‌تواند کل اینترنت را خاموش کند؛ ولی هیچ‌کس هم کل آن را اداره نمی‌کند.
+شبکهٔ ساده و دو سرِ هوشمند: برای همین هر برنامهٔ تازه، از وب تا agent، بدون اجازهٔ شبکه روی اینترنت ساخته شد.
 
 ---
 module: M1
@@ -140,7 +140,7 @@ IPv6، نسخهٔ تازهٔ نشانی‌های اینترنت، از ۱۹۹۸ 
 
 ::punch::
 
-<div v-click="1">شبکهٔ بی‌مرکز را کسی نمی‌تواند خاموش کند، ولی با یک دستور هم نمی‌شود عوضش کرد.</div>
+<div v-click="1">شبکهٔ بی‌مرکز را هیچ‌کس به‌تنهایی اداره نمی‌کند؛ پس با یک دستور هم نمی‌شود عوضش کرد.</div>
 
 ---
 layout: section
@@ -203,7 +203,7 @@ corner: وب
 
 ::punch::
 
-دو تا از این سه اختراع، موضوع همین درس‌اند.
+وب یک برنامه روی اینترنت است، مثل ایمیل؛ و دو تا از این سه اختراع موضوع همین درس‌اند.
 
 ---
 type: interactive
@@ -227,7 +227,7 @@ link: none
 
 ::punch::
 
-<div v-click="1">در پروتکل‌ها، باز بودن اغلب از بهتر بودن مهم‌تر است.</div>
+<div v-click="1">در پروتکل‌ها، هزینهٔ پذیرش اغلب از بهتر بودن مهم‌تر است.</div>
 
 ---
 module: M2
@@ -303,7 +303,7 @@ corner: مرورگرها
 <div class="cols">
 <div>
 
-- [کوکی](https://developer.mozilla.org/en-US/docs/Glossary/Cookie) (۱۹۹۴): راهی برای اینکه پروتکل بی‌حالت، کاربر را به یاد بیاورد (جلسهٔ ۳)
+- [کوکی](https://developer.mozilla.org/en-US/docs/Glossary/Cookie) (۱۹۹۴): راهی برای اینکه برنامهٔ وب، روی پروتکلی بی‌حالت، کاربر را به یاد بیاورد (جلسهٔ ۳)
 - [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) (۱۹۹۵): رمزنگاری برای خرید اینترنتی؛ نوادهٔ امروزی‌اش TLS است (جلسهٔ ۴)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript) (۱۹۹۵): برنامه‌ای که [داخل صفحه اجرا می‌شود]{.mark}؛ نسخهٔ اولش در حدود ده روز نوشته شد
 
@@ -492,7 +492,7 @@ link: none
   <li><b>د)</b> Trident (IE)</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: الف)</strong> Chrome و Edge و Opera و Brave، و حتی مرورگرهای هوش مصنوعی مثل Comet و ChatGPT Atlas، همه روی Chromium ساخته شده‌اند؛ Edge در ۲۰۲۰ موتور خودش را کنار گذاشت. در ۱۱ شهریور ۱۴۰۴ دادگاهی در آمریکا حکم به فروش اجباری Chrome نداد و یکی از دلیل‌هایش رقابت تازهٔ هوش مصنوعی بود (<a href="https://www.npr.org/2025/09/02/nx-s1-5478625/google-chrome-doj-antitrust-ruling">NPR</a>).</div>
+<div v-click="1" class="answer"><strong>پاسخ: الف)</strong> Chrome و Edge و Opera و Brave، و حتی مرورگرهای هوش مصنوعی مثل Comet و ChatGPT Atlas، همه روی Chromium ساخته شده‌اند؛ Edge در ۲۰۲۰ موتور خودش را کنار گذاشت. فقط روی iPhone، بیرون از اتحادیهٔ اروپا، <a href="https://developer.apple.com/app-store/review/guidelines/#software-requirements">قاعدهٔ Apple</a> همه را، حتی Chrome، به WebKit مجبور می‌کند. در ۱۱ شهریور ۱۴۰۴ دادگاهی در آمریکا حکم به فروش اجباری Chrome نداد و یکی از دلیل‌هایش رقابت تازهٔ هوش مصنوعی بود (<a href="https://www.npr.org/2025/09/02/nx-s1-5478625/google-chrome-doj-antitrust-ruling">NPR</a>).</div>
 
 ::punch::
 
@@ -612,7 +612,7 @@ TCP و UDP دو پروتکل انتقال اصلی‌اند؛ HTTP/3 روی QUIC
   <li><b>د)</b> UDP رمزنگاری داخلی دارد</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> فایروال و NAT بیشتر فقط TCP و UDP را می‌شناسند (<a href="https://en.wikipedia.org/wiki/Protocol_ossification">ossification</a>)؛ دلیل دوم: TCP در هستهٔ سیستم‌عامل دیر عوض می‌شود، ولی QUIC در خود مرورگر است (<a href="https://dl.acm.org/doi/10.1145/3098822.3098842">مقالهٔ طراحان</a>).</div>
+<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> فایروال و NAT بیشتر فقط TCP و UDP را می‌شناسند (<a href="https://en.wikipedia.org/wiki/Protocol_ossification">ossification</a>). TCP در هستهٔ سیستم‌عامل هم دیر عوض می‌شود ولی QUIC در خود مرورگر است (<a href="https://dl.acm.org/doi/10.1145/3098822.3098842">مقالهٔ طراحان</a>)، و سرآیندش را رمز می‌کند تا دوباره گیر نیفتد.</div>
 
 ::punch::
 
@@ -645,7 +645,7 @@ corner: هوش مصنوعی
 <div>
 
 - [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT) در آذر ۱۴۰۱ منتشر شد و گفتگو با مدل زبانی را همه‌گیر کرد
-- APIهای مدل‌ها پاسخ را با [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) تکه‌تکه می‌فرستند، و همین است که متن را کلمه‌به‌کلمه می‌بینید (جلسهٔ ۶)
+- مدل متن را توکن‌به‌توکن تولید می‌کند و API هر تکه را همان لحظه با [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) می‌فرستد؛ برای همین پاسخ کم‌کم ظاهر می‌شود (جلسهٔ ۶)
 - مدل‌ها برای یادگیری و پاسخ دادن [وب را می‌خوانند]{.mark}، و این رابطهٔ سایت‌ها با خواننده‌هایشان را عوض کرد
 
 </div>
@@ -687,7 +687,7 @@ corner: هوش مصنوعی
 
 # سایت‌ها با خزنده‌های هوش مصنوعی چه می‌کنند؟
 
-- فایل [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) از ۱۹۹۴ فقط یک «خواهش» است، نه قفل
+- فایل robots.txt از ۱۹۹۴ هست و از ۲۰۲۲ با [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309) استاندارد شد؛ ولی هنوز فقط یک «خواهش» است، نه قفل
 - در تیر ۱۴۰۴ Cloudflare برای دامنه‌های تازه خزنده‌های هوش مصنوعی را [پیش‌فرض مسدود کرد]{.mark}؛ در [تیر ۱۴۰۵](https://blog.cloudflare.com/content-independence-day-ai-options/) بات جستجو و agent و آموزش را از هم جدا کرد
 - کد وضعیت [402](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402)، «پرداخت لازم است»، نزدیک سه دهه بی‌استفاده ماند تا [x402](https://www.infoq.com/news/2026/07/cloudflare-aws-x402-micropayment/): سرور 402 و قیمت را برمی‌گرداند و agent می‌پردازد؛ AWS از خرداد ۱۴۰۵ آن را ارائه می‌دهد (جلسهٔ ۷)
 
@@ -729,7 +729,7 @@ corner: هوش مصنوعی
 
 - مرورگرهای هوش مصنوعی مثل Comet (تیر ۱۴۰۴) و ChatGPT Atlas (مهر ۱۴۰۴) خودشان صفحه باز می‌کنند، فرم پر می‌کنند و حتی خرید می‌کنند؛ از [بهمن ۱۴۰۴](https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/) خود Chrome هم با auto browse همین کار را می‌کند
 - [MCP](https://modelcontextprotocol.io) (آذر ۱۴۰۳) پروتکلی است که agentها با آن به ابزارها و داده‌ها وصل می‌شوند
-- پژوهشگران امنیتی در همان ماه‌های اول، [prompt injection](https://simonwillison.net/tags/prompt-injection/) را در مرورگر Comet نشان دادند؛ [صفحه‌ای که agent می‌خواند، می‌تواند به او دستور بدهد]{.mark} (جلسهٔ ۱)
+- پژوهشگران امنیتی در همان ماه‌های اول، [prompt injection](https://brave.com/blog/comet-prompt-injection/) را در مرورگر Comet نشان دادند؛ [صفحه‌ای که agent می‌خواند، می‌تواند به او دستور بدهد]{.mark} (جلسهٔ ۱)
 
 ::punch::
 
@@ -778,7 +778,7 @@ corner: جمع‌بندی
 
 | الگو | نمونه‌ها |
 | --- | --- |
-| باز بودن معمولاً برنده می‌شود | وب در برابر Gopher، و TCP/IP |
+| هزینهٔ پذیرش کمتر معمولاً برنده می‌شود | وب رایگان در برابر Gopher، و IE همراه Windows و Let's Encrypt |
 | انحصار و تمرکز شکننده است | IE6 و Chromium و قطعی AWS در مهر ۱۴۰۴ |
 | هرچه پرکاربردتر، عوض کردنش سخت‌تر | IPv6 و SmooshGate و User-Agent و QUIC روی UDP |
 | امنیت دیرهنگام گران است | DigiNotar؛ و این بار زودتر، رمزنگاری [پساکوانتومی](https://blog.cloudflare.com/post-quantum-roadmap/) |
@@ -861,7 +861,7 @@ corner: جمع‌بندی
 # برای کنجکاوی بیشتر (۱ از ۲)
 
 <ol class="curious">
-  <li>چرا اولین پیام اینترنت بعد از دو حرف قطع شد، و در آن سال‌ها «از کار افتادن» یک گره چه معنایی داشت؟<span class="hint">روایت لئونارد کلاینراک از شب ۲۹ اکتبر ۱۹۶۹.</span></li>
+  <li>چرا اولین پیام ARPANET بعد از دو حرف قطع شد، و در آن سال‌ها «از کار افتادن» یک گره چه معنایی داشت؟<span class="hint">روایت لئونارد کلاینراک از شب ۲۹ اکتبر ۱۹۶۹.</span></li>
   <li>چرا در بعضی سایت‌های فارسی جستجوی «کیک» نتیجهٔ «كيك» را پیدا نمی‌کند، با اینکه روی صفحه یکی به نظر می‌رسند؟<span class="hint">«ی» فارسی و «ي» عربی در Unicode دو نویسهٔ جدا هستند (<code>U+06CC</code> و <code>U+064A</code>)؛ استاندارد صفحه‌کلید فارسی ISIRI 9147 (فروردین ۱۳۸۶) را هم ببینید.</span></li>
   <li>RFC 7258 دقیقاً از طراحان پروتکل چه می‌خواهد؟<span class="hint">متن خود RFC را بخوانید؛ فقط چند صفحه است.</span></li>
 </ol>
@@ -879,6 +879,7 @@ corner: جمع‌بندی
 <ol class="curious" style="counter-reset: q 3">
   <li>چرا یک خطای DNS در یک منطقهٔ AWS، سرویس‌هایی را در سراسر دنیا انداخت و چرا بازگشت کامل ساعت‌ها بیشتر از رفع خود خطا طول کشید؟<span class="hint">بخش‌های DynamoDB و EC2 در گزارش رسمی AWS، و نقش منطقهٔ us-east-1.</span></li>
   <li>مرورگر شما الان چه User-Agentی می‌فرستد، و Chrome کدام جزئیات را فقط وقتی می‌دهد که سرور بخواهد؟<span class="hint">زبانهٔ Network در DevTools؛ هدرهای <code>Accept-CH</code> و <code>Sec-CH-UA</code> در MDN.</span></li>
+  <li>اصل Postel می‌گوید «در فرستادن سخت‌گیر و در پذیرفتن آسان‌گیر باش». چرا IETF در ۲۰۲۳ نوشت این اصل در بلندمدت به پروتکل‌ها آسیب می‌زند، و چه ربطی به IE6 و User-Agent دارد؟<span class="hint">RFC 9413، و GREASE در RFC 8701.</span></li>
 </ol>
 
 ---
@@ -894,6 +895,8 @@ corner: منابع
 <ul class="src two">
   <li><a href="https://aws.amazon.com/message/101925/">گزارش AWS از قطعی ۲۸ مهر ۱۴۰۴ <bdi>(20 Oct 2025)</bdi></a></li>
   <li><a href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a> · <a href="https://en.wikipedia.org/wiki/Paul_Baran">Paul Baran</a> · <a href="https://www.americanhistory.si.edu/explore/stories/internet-uttered-lo-forty-years-ago">Smithsonian: LO</a></li>
+  <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">ISOC: Brief History of the Internet</a></li>
+  <li><a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">مقالهٔ TCP/IP (۱۹۷۴)</a> · <a href="https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf">مقالهٔ end-to-end</a></li>
   <li><a href="https://en.wikipedia.org/wiki/Flag_day_(computing)">Flag day (computing)</a> · <a href="https://www.rfc-editor.org/rfc/rfc801">RFC 801</a></li>
   <li><a href="https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/">APNIC: IPv6 در آمار Google</a></li>
   <li><a href="https://info.cern.ch">info.cern.ch: نخستین وب‌سایت</a> · <a href="https://www.w3.org/History/1989/proposal.html">پیشنهاد ۱۹۸۹</a></li>
@@ -926,6 +929,8 @@ corner: منابع
   <li><a href="https://www.imperva.com/blog/bad-bot-report-2026-bots-agentic-age/">Imperva: Bad Bot Report 2026</a></li>
   <li><a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare: ترافیک هوش مصنوعی (۱۴۰۵)</a></li>
   <li><a href="https://www.infoq.com/news/2026/07/cloudflare-aws-x402-micropayment/">InfoQ: x402 در Cloudflare و AWS</a></li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc9309">RFC 9309</a> · <a href="https://brave.com/blog/comet-prompt-injection/">پژوهش Brave دربارهٔ Comet</a></li>
+  <li><a href="https://developer.apple.com/app-store/review/guidelines/#software-requirements">قاعدهٔ WebKit در Apple</a></li>
   <li><a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/">Cloudflare: خزندهٔ Perplexity</a> · <a href="https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/">Web Bot Auth</a></li>
   <li><a href="https://techcrunch.com/2026/01/28/chrome-takes-on-ai-browsers-with-tighter-gemini-integration-agentic-features-for-autonomous-tasks/">TechCrunch: auto browse در Chrome</a></li>
   <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">MCP: مشخصات مرداد ۱۴۰۵</a></li>

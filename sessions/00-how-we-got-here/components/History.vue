@@ -8,7 +8,7 @@ const cur = computed(() => Math.min(Math.max($clicks.value, 0), eras.length - 1)
 const W = 'https://en.wikipedia.org/wiki/'
 const eras = [
   { y: '۱۹۶۹', s: '۱۳۴۸', t: 'ARPANET و پیام «LO»', link: `${W}ARPANET`, art: 'lo',
-    d: 'اولین پیام شبکه قرار بود LOGIN باشد؛ سیستم بعد از دو حرف از کار افتاد و «LO» اولین پیام تاریخ اینترنت شد.',
+    d: 'اولین پیام شبکه قرار بود LOGIN باشد؛ سیستم بعد از دو حرف از کار افتاد و «LO» اولین پیام ARPANET شد؛ شبکه‌ای برای اشتراک کامپیوترهای گران، نه برای جنگ.',
     k: 'زنجیره‌ای که هر حلقه‌اش می‌تواند وسط کار بشکند' },
   { y: '۱۹۸۳', s: '۱۳۶۱', t: 'TCP/IP و DNS', link: `${W}Internet_protocol_suite`, art: 'tcp',
     d: 'در یکم ژانویهٔ ۱۹۸۳ همهٔ ARPANET یک‌شبه به TCP/IP کوچ کرد، و در همان سال DNS جای فایل مشترکی به نام HOSTS.TXT را گرفت.',
