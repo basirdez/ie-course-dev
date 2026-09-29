@@ -53,7 +53,7 @@ for (const s of visible.filter(s => s.exercise && existsSync(`exercises/${s.exer
   mkdirSync(`dist/exercises/${s.exercise}`, { recursive: true })
   const files = ['starter', 'check'].filter(d => existsSync(`exercises/${s.exercise}/${d}`))
   const extra = files.length ? `<p class="files">فایل‌های تمرین: ${files.map(d => `<a href="${repoUrl}/tree/main/exercises/${s.exercise}/${d}"><code>${d}/</code></a>`).join(' · ')}</p>` : ''
-  writeFileSync(`dist/exercises/${s.exercise}/index.html`, page(`تمرین ${s.n}`, `<article class="doc">${renderMd(`exercises/${s.exercise}/README.md`, s.exercise)}${extra}</article>`, 2))
+  writeFileSync(`dist/exercises/${s.exercise}/index.html`, page(`تمرین کوتاه ${s.n}`, `<article class="doc">${renderMd(`exercises/${s.exercise}/README.md`, s.exercise)}${extra}</article>`, 2))
 }
 mkdirSync('dist/policy', { recursive: true })
 writeFileSync('dist/policy/index.html', page('قواعد درس', `<article class="doc">${renderMd('course-policy.md')}</article>`, 1))
@@ -64,13 +64,13 @@ const cards = course.chapters.map((ch) => {
   const rows = course.sessions.filter(s => s.chapter === ch.id && (!pub || s.published || !exists(s))).map((s) => {
     const built = existsSync(`dist/${s.slug}/index.html`) && (!pub || s.published)
     const links = built
-      ? `<a class="btn" href="${s.slug}/">اسلایدها</a>${existsSync(`dist/${s.slug}/${s.slug}.pdf`) ? `<a class="btn" href="${s.slug}/${s.slug}.pdf">PDF</a>` : ''}${s.exercise && existsSync(`dist/exercises/${s.exercise}/index.html`) ? `<a class="btn ex" href="exercises/${s.exercise}/">تمرین ${fa(s.n)}</a>` : ''}`
+      ? `<a class="btn" href="${s.slug}/">اسلایدها</a>${existsSync(`dist/${s.slug}/${s.slug}.pdf`) ? `<a class="btn" href="${s.slug}/${s.slug}.pdf">PDF</a>` : ''}${s.exercise && existsSync(`dist/exercises/${s.exercise}/index.html`) ? `<a class="btn ex" href="exercises/${s.exercise}/">تمرین کوتاه ${fa(s.n)}</a>` : ''}`
       : '<span class="soon">به‌زودی</span>'
     return `<li class="${built ? '' : 'off'}"><span class="n">${fa(s.n)}</span><div class="t"><b>${esc(s.title)}</b><small>${esc(s.question)}</small></div><div class="a">${links}</div></li>`
   }).join('')
   return rows ? `<section><h2>${esc(ch.title)}</h2><ol class="sessions">${rows}</ol></section>` : ''
 }).join('')
-writeFileSync('dist/index.html', page(course.title, `<div class="hero"><h1>${esc(course.title)}</h1><p>${esc(course.term)} · ${esc(course.instructor)}</p><p class="hint">هر جلسه: اسلایدها برای دیدن در مرورگر، PDF برای مرور و چاپ، و تمرین پایان جلسه. پیش از اولین تمرین، <a href="policy/">قواعد درس</a> را بخوانید.</p></div>${cards}`, 0))
+writeFileSync('dist/index.html', page(course.title, `<div class="hero"><h1>${esc(course.title)}</h1><p>${esc(course.term)} · ${esc(course.instructor)}</p><p class="hint">هر جلسه: اسلایدها برای دیدن در مرورگر، PDF برای مرور و چاپ، و تمرین کوتاه پایان جلسه. پیش از اولین تمرین، <a href="policy/">قواعد درس</a> را بخوانید.</p></div>${cards}`, 0))
 
 // ۴) قلم و CSS
 copyFileSync('theme/styles/fonts/vazirmatn.woff2', 'dist/site-assets/vazirmatn.woff2')

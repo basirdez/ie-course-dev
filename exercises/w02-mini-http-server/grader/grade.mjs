@@ -1,5 +1,5 @@
 // نمره‌دهی خودکار تمرین ۲ (خصوصی؛ منتشر نمی‌شود).
-// اجرا: node grader/grade.mjs <پوشهٔ ex02 دانشجو>   ← خروجی JSON روی stdout
+// اجرا: node grader/grade.mjs <پوشهٔ w02 دانشجو>   ← خروجی JSON روی stdout
 // کد دانشجو را فقط در محیط جدا (VM یا container بدون دسترسی شبکه) اجرا کنید.
 import { spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
