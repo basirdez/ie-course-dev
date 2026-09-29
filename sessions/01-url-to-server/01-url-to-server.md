@@ -988,11 +988,11 @@ link: all
 corner: تمرین
 ---
 
-# تمرین ۱: کدام URL شما را گول می‌زند؟
+# تمرین کوتاه ۱: یک URL، دو parser
 
-<Exercise ex="01-tricky-urls" due="تا شب پیش از جلسهٔ ۲">
+<Exercise ex="01-two-parsers" due="تا شب پیش از جلسهٔ ۲">
 <dl class="run">
-  <dt>چالش</dt><dd>سرور شما فقط باید به <code>example.com</code> درخواست بفرستد و بررسی‌اش <code>url.includes('example.com')</code> است. هشت URL را با parser مرورگر و curl بسنجید و بررسی درست را بنویسید.</dd>
+  <dt>چالش</dt><dd>سه URL فریبنده را یک بار با parser مرورگر، یعنی <code>new URL</code> در Node، و یک بار با curl به یک سرور محلی بسنجید؛ host و path هرکدام را کنار هم بگذارید.</dd>
   <dt>پیش‌بینی</dt><dd>همین حالا روی کاغذ: <code dir="ltr">http://evil.test&#92;@example.com/</code> در مرورگر به کدام host وصل می‌شود؟ در curl چطور؟</dd>
   <dt>پل</dt><dd>خط درخواست و فیلد <code>Host</code> که در خروجی curl می‌بینید، موضوع جلسهٔ ۲ است.</dd>
 </dl>
