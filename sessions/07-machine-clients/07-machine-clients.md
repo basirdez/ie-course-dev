@@ -216,7 +216,7 @@ corner: هویت
   <li><b>د)</b> ورود ممنوع</li>
 </ol>
 
-<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> کد <code>402 Payment Required</code> سی سال «برای آینده» کنار مانده بود. از تیر ۱۴۰۴ Cloudflare با آن از crawler پول می‌خواهد (<a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">pay per crawl</a>)؛ crawler قیمت را در header می‌پذیرد و <code>200</code> می‌گیرد.</div>
+<div v-click="1" class="answer"><strong>پاسخ: ب)</strong> کد <code>402 Payment Required</code> نزدیک سی سال «برای آینده» کنار مانده بود. از تیر ۱۴۰۴ Cloudflare با آن از crawler پول می‌خواهد (<a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">pay per crawl</a>)؛ crawler قیمت را در header می‌پذیرد و <code>200</code> می‌گیرد.</div>
 
 ::punch::
 
@@ -364,7 +364,7 @@ corner: retry
 | صبر به اندازهٔ `Retry-After` | ۳٫۰ ثانیه | ۵۰ | ۱۵ |
 | همان، با تأخیر تصادفی | ۴٫۴ ثانیه | ۵۰ | ۷ |
 
-- بیست کار با سقف پنج در ثانیه، هر طور حساب کنید چهار نوبت می‌خواهد؛ عجله فقط بار اضافه ساخت: ۵۷۰ برابر
+- بیست کار با سقف پنج در ثانیه، هر طور حساب کنید چهار نوبت می‌خواهد؛ عجله فقط بار اضافه ساخت: بیش از ۵۰۰ برابر
 - تأخیر تصادفی تعداد درخواست را کم نکرد؛ موج را نصف کرد، به بهای زمان
 
 ---
