@@ -700,7 +700,7 @@ corner: احراز هویت
 
 - چارچوب خودِ HTTP: `401` با یک چالش در `WWW-Authenticate`، و مدرک کلاینت در `Authorization` ([RFC 9110 §11](https://www.rfc-editor.org/rfc/rfc9110#section-11))
 - طرح `Basic` نام و رمز را فقط با Base64 می‌نویسد؛ [رمزنگاری نیست]{.mark}
-- طرح `Bearer` یک token می‌برد: هر که آن را بیاورد پذیرفته می‌شود ([RFC 6750](https://www.rfc-editor.org/rfc/rfc6750))
+- طرح `Bearer` یک token می‌برد: هر که آن را بیاورد پذیرفته می‌شود ([RFC 6750](https://www.rfc-editor.org/rfc/rfc6750))
 - کد `403` یعنی شناختمت ولی اجازه نداری (جلسهٔ ۲)
 
 </div>
@@ -800,7 +800,7 @@ WWW-Authenticate: Bearer resource_metadata=
     "https://mcp.example.com/.well-known/oauth-protected-resource"
 ```
 
-- در [MCP](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)، پروتکل اتصال agent به ابزار (جلسهٔ ۷)، سرور ابزار همان `401` را می‌فرستد، با نشانی سندی که می‌گوید token را از کجا بگیر ([RFC 9728](https://www.rfc-editor.org/rfc/rfc9728))
+- در [MCP](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)، پروتکل اتصال agent به ابزار (جلسهٔ ۷)، سرور ابزار همان `401` را می‌فرستد، با نشانی سندی که می‌گوید token را از کجا بگیر ([RFC 9728](https://www.rfc-editor.org/rfc/rfc9728))
 - token باید [فقط برای همان سرور]{.mark} صادر شده باشد و در `Authorization` بیاید، نه در query
 
 ::punch::

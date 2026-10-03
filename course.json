@@ -15,7 +15,7 @@
     { "slug": "02-http-transaction", "chapter": "ch1", "n": 2, "title": "یک تراکنش HTTP", "question": "یک درخواست و پاسخ کامل از چه ساخته شده و معنایش را چه کسی تعیین می‌کند؟", "exercise": "02-mini-http-server", "published": false },
     { "slug": "03-state-identity", "chapter": "ch1", "n": 3, "title": "state و هویت", "question": "پروتکلی که بی‌حالت است، شما را چطور می‌شناسد؟", "exercise": "03-cookie-csrf", "published": false },
     { "slug": "04-connection-tls", "chapter": "ch1", "n": 4, "title": "زیر HTTP: اتصال و TLS", "question": "چرا HTTP سه نسخه دارد و TLS دقیقاً از چه چیزی محافظت می‌کند؟", "exercise": "04-open-tls", "published": false },
-    { "slug": "05-intermediaries", "chapter": "ch1", "n": 5, "title": "واسطه‌ها: cache و proxy و CDN", "question": "چه کسی بین شما و سرور نشسته و چه چیزی را می‌بیند؟", "published": false },
+    { "slug": "05-intermediaries", "chapter": "ch1", "n": 5, "title": "واسطه‌ها: cache و proxy و CDN", "question": "چه کسی بین شما و سرور نشسته و چه چیزی را می‌بیند؟", "exercise": "05-cache-bugs", "published": false },
     { "slug": "06-server-push", "chapter": "ch1", "n": 6, "title": "وقتی سرور باید اول حرف بزند", "question": "push از سرور به کلاینت با چه سازوکارهایی ممکن است و هرکدام کجا می‌شکند؟", "published": false },
     { "slug": "07-machine-clients", "chapter": "ch1", "n": 7, "title": "کلاینت‌های ماشینی، agent و MCP", "question": "وقتی کلاینت انسان نیست، چه چیزی در پروتکل عوض می‌شود؟", "published": false }
   ],
