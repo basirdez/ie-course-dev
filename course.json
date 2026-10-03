@@ -13,7 +13,7 @@
     { "slug": "00-how-we-got-here", "chapter": "course", "n": 0, "title": "اینترنت چطور به اینجا رسید؟", "question": "اینترنت امروز حاصل کدام تصمیم‌های مهندسی است؟", "exercise": "00-toolbox", "published": true },
     { "slug": "01-url-to-server", "chapter": "ch1", "n": 1, "title": "از URL تا سرور", "question": "مرورگر چگونه از URL به سرور می‌رسد، و کدام مرحله می‌تواند خراب شود؟", "exercise": "01-tricky-urls", "published": true },
     { "slug": "02-http-transaction", "chapter": "ch1", "n": 2, "title": "یک تراکنش HTTP", "question": "یک درخواست و پاسخ کامل از چه ساخته شده و معنایش را چه کسی تعیین می‌کند؟", "exercise": "02-mini-http-server", "published": false },
-    { "slug": "03-state-identity", "chapter": "ch1", "n": 3, "title": "state و هویت", "question": "پروتکلی که بی‌حالت است، شما را چطور می‌شناسد؟", "published": false },
+    { "slug": "03-state-identity", "chapter": "ch1", "n": 3, "title": "state و هویت", "question": "پروتکلی که بی‌حالت است، شما را چطور می‌شناسد؟", "exercise": "03-cookie-csrf", "published": false },
     { "slug": "04-connection-tls", "chapter": "ch1", "n": 4, "title": "زیر HTTP: اتصال و TLS", "question": "چرا HTTP سه نسخه دارد و TLS دقیقاً از چه چیزی محافظت می‌کند؟", "published": false },
     { "slug": "05-intermediaries", "chapter": "ch1", "n": 5, "title": "واسطه‌ها: cache و proxy و CDN", "question": "چه کسی بین شما و سرور نشسته و چه چیزی را می‌بیند؟", "published": false },
     { "slug": "06-server-push", "chapter": "ch1", "n": 6, "title": "وقتی سرور باید اول حرف بزند", "question": "push از سرور به کلاینت با چه سازوکارهایی ممکن است و هرکدام کجا می‌شکند؟", "published": false },
